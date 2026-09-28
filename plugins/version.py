@@ -19,7 +19,7 @@ class Version(PluginLoader):
     ):
         super().initialize(driver, plugin_manager, settings)
         self.version = self.get_version_from_file()
-        self.source = "https://github.com/aio-it/mmchatgpt"
+        self.source = "https://github.com/lbr88-labs/mmchatgpt"
         self.helper.slog(
             f"Started. Version {self.version} Source: {self.source}")
 

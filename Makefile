@@ -26,14 +26,14 @@ docker-scan:
 	docker pull aquasec/trivy:0.18.3
 	docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/.cache:/root/.cache/ aquasec/trivy:0.18.3 lbr88/mmchatgpt:latest
 docker-build: requirements
-	docker build -t docker.io/lbr88/mmchatgpt:$(VERSION) -t docker.io/lbr88/mmchatgpt:latest -t ghcr.io/aio-it/mmchatgpt:$(VERSION) -t ghcr.io/aio-it/mmchatgpt:latest .
+	docker build -t docker.io/lbr88/mmchatgpt:$(VERSION) -t docker.io/lbr88/mmchatgpt:latest -t ghcr.io/lbr88-labs/mmchatgpt:$(VERSION) -t ghcr.io/lbr88-labs/mmchatgpt:latest .
 docker-push: docker-build
 	cat .github-token | docker login ghcr.io -u lbr88 --password-stdin
 	cat .docker-token | docker login docker.io -u lbr88 --password-stdin
 	docker push docker.io/lbr88/mmchatgpt:$(VERSION)
 	docker push docker.io/lbr88/mmchatgpt:latest
-	docker push ghcr.io/aio-it/mmchatgpt:latest
-	docker push ghcr.io/aio-it/mmchatgpt:$(VERSION)
+	docker push ghcr.io/lbr88-labs/mmchatgpt:latest
+	docker push ghcr.io/lbr88-labs/mmchatgpt:$(VERSION)
 # other
 requirements:
 	echo "Generating requirements.txt"
