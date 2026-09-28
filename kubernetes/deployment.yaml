@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: bot
-          image: ghcr.io/aio-it/mmchatgpt:latest
+          image: ghcr.io/lbr88-labs/mmchatgpt:latest
           command: ["python", "bot.py"]
           envFrom:
             - configMapRef:
