@@ -51,7 +51,7 @@ ipykernel = "*"
 ipython = "*"
 pytest = "*"
 coverage = "*"
-tornado = ">=6.5.8"
+tornado = ">=6.5.9"
 
 [requires]
 python_version = "3.10"
